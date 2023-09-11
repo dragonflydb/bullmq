@@ -666,7 +666,7 @@ describe('workers', function () {
       };
     });
 
-
+    // wait for all jobs to enter the queue and then start processing
     await Promise.all([...normalPriority,...mediumPriority,...highPriority]);
     const worker = new Worker(queueName, processor, { connection });
     await worker.waitUntilReady();
@@ -711,7 +711,7 @@ describe('workers', function () {
 
 
   describe('when prioritized job is added while processing last active job', () => {
-    it('should process prioritized job whithout delay', async function () {
+    it('should process prioritized job without delay', async function () {
       this.timeout(1000);
       await queue.add('test1', { p: 2 }, { priority: 2 });
       let counter = 0;
