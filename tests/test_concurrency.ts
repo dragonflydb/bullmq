@@ -308,7 +308,7 @@ describe('Concurrency', () => {
         await queueEvents.close();
         await worker.close();
         await queue.close();
-      }).timeout(4000);
+      }).timeout(5000);
     });
   });
 

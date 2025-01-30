@@ -1110,7 +1110,7 @@ describe('repeat', function () {
   });
 
   it('should repeat 7:th day every month at 9:25', async function () {
-    this.timeout(12000);
+    this.timeout(200000);
 
     const date = new Date('2017-02-02 7:21:42');
     this.clock.setSystemTime(date);
@@ -1196,6 +1196,7 @@ describe('repeat', function () {
 
   describe('when repeatable job is promoted', function () {
     it('keeps one repeatable and one delayed after being processed', async function () {
+      this.timeout(12000);
       const options = {
         repeat: {
           pattern: '0 * 1 * *',

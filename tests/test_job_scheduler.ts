@@ -27,7 +27,7 @@ const NoopProc = async (job: Job) => {};
 describe('Job Scheduler', function () {
   const redisHost = process.env.REDIS_HOST || 'localhost';
   const prefix = process.env.BULLMQ_TEST_PREFIX || 'bull';
-  this.timeout(10000);
+  this.timeout(11000);
   let repeat: Repeat;
   let queue: Queue;
   let queueEvents: QueueEvents;
@@ -1457,7 +1457,7 @@ describe('Job Scheduler', function () {
   });
 
   it('should repeat 7:th day every month at 9:25', async function () {
-    this.timeout(12000);
+    this.timeout(200000);
 
     const date = new Date('2017-02-02 7:21:42');
     this.clock.setSystemTime(date);

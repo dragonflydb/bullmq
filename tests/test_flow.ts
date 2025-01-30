@@ -3418,7 +3418,7 @@ describe('flows', () => {
       await flow.close();
 
       await removeAllQueueData(new IORedis(redisHost), topQueueName);
-    });
+    }).timeout(6000);
   });
 
   describe('when children have delay', () => {

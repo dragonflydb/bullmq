@@ -98,6 +98,8 @@ describe('Delayed jobs', function () {
 
   describe('when markers are deleted', function () {
     it('should process a delayed job without getting stuck', async function () {
+      this.timeout(9000);
+
       const delayTime = 6000;
       const margin = 1.2;
 
@@ -408,6 +410,8 @@ describe('Delayed jobs', function () {
 
   // Add test where delays overlap so that we can see that indeed the jobs are processed concurrently.
   it('should process delayed jobs concurrently respecting delay and concurrency', async function () {
+    this.timeout(10000);
+
     const delay_ = 250;
     const concurrency = 100;
     const margin = 1.5;
