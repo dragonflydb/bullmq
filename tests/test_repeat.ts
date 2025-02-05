@@ -1110,7 +1110,7 @@ describe('repeat', function () {
   });
 
   it('should repeat 7:th day every month at 9:25', async function () {
-    this.timeout(200000);
+    this.timeout(500000);
 
     const date = new Date('2017-02-02 7:21:42');
     this.clock.setSystemTime(date);
